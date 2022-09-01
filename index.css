@@ -1,0 +1,138 @@
+/*================================================
+
+General
+
+================================================*/
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: rgb(161, 117, 255);
+  background: linear-gradient(90deg, rgba(161, 117, 255, 1) 0%, rgba(56, 1, 100, 1) 100%);
+  height: 100%;
+}
+
+body {
+  background: rgb(161, 117, 255);
+  background: linear-gradient(90deg, rgba(161, 117, 255, 1) 0%, rgba(56, 1, 100, 1) 100%);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  font: 100%/1.5 sans-serif;
+  overflow: hidden;
+}
+
+/*================================================
+
+Score
+
+================================================*/
+
+.score {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+  font-weight: bold;
+  padding-top: 5px;
+  text-align: center;
+}
+
+/*================================================
+
+Stage
+
+================================================*/
+
+.stage {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+
+/*================================================
+
+Tiles
+
+================================================*/
+
+.tile {
+  background: rgb(233, 187, 217);
+  position: absolute;
+  transition-property: background, box-shadow, opacity, transform;
+  transform: translateZ(0);
+  transition-duration: 3000ms;
+  /* color: hsl(259, 100%, 73%); */
+}
+
+.tile:before {
+  bottom: 0;
+  content: "";
+  height: 0;
+  left: 0;
+  margin: auto;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+  transition: opacity 300ms;
+}
+
+.tile.path:before {
+  opacity: 1;
+}
+
+.tile.up:before {
+  border-bottom: 4px inset hsl(259, 100%, 73%);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+}
+
+.tile.down:before {
+  border-top: 4px inset hsl(259, 100%, 73%);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+}
+
+.tile.left:before {
+  border-right: 4px inset hsl(259, 100%, 73%);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+
+.tile.right:before {
+  border-left: 4px inset hsl(259, 100%, 73%);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+
+@media (max-width: 900px), (max-height: 900px) {
+  .tile.up:before,
+  .tile.down:before,
+  .tile.left:before,
+  .tile.right:before {
+    border-width: 3px;
+  }
+}
+
+@media (max-width: 500px), (max-height: 500px) {
+  .tile.up:before,
+  .tile.down:before,
+  .tile.left:before,
+  .tile.right:before {
+    border-width: 2px;
+  }
+}
+
+/* .tile.pressed {
+  background: rgba(161, 117, 255, 0.5);
+  box-shadow: inset 0 0 10px rgb(161, 117, 255);
+  transition-duration: 0ms;
+} */
