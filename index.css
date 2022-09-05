@@ -56,6 +56,10 @@ Stage
   z-index: 2;
 }
 
+.snake-head:last-of-type {
+  border-radius: 100% !important;
+}
+
 /*================================================
 
 Tiles

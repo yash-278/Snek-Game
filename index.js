@@ -458,6 +458,7 @@ Snake Tile Entity
     this.elem.style.backgroundColor = "rgba(56, 1, 100, " + this.alpha + ")";
     // this.elem.style.boxShadow = "0 0 " + this.blur + "px #fff";
     this.elem.style.borderRadius = this.borderRadius;
+    this.elem.classList.add("snake-head");
   };
 })();
 
